@@ -9,7 +9,6 @@
     <meta property="og:title" content="DMarketing | Digital Marketing Services">
     <meta property="og:description" content="DMarketing offers SEO, email marketing, and social media marketing services to help your business grow online.">
     <meta property="og:type" content="website">
-    <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD" defer></script>
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
@@ -24,12 +23,6 @@
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            <button id="cart-toggle" class="cart-toggle" aria-label="Open cart">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M7 4V2C7 1.45 7.45 1 8 1H16C16.55 1 17 1.45 17 2V4H20C20.55 4 21 4.45 21 5S20.55 6 20 6H19V19C19 20.1 18.1 21 17 21H7C5.9 21 5 20.1 5 19V6H4C3.45 6 3 5.55 3 5S3.45 4 4 4H7ZM9 3V4H15V3H9ZM7 6V19H17V6H7Z"/>
-                </svg>
-                <span id="cart-count" class="cart-count">0</span>
-            </button>
         </div>
     </header>
 
@@ -140,37 +133,29 @@
                 </select>
             </div>
 
-            <div id="catalog-grid" class="catalog-grid">
-                <p class="loading-state">Loading products...</p>
-            </div>
+            <div id="catalog-grid" class="catalog-grid"></div>
         </section>
 
-        <section id="cart-modal" class="cart-modal hidden" role="dialog" aria-labelledby="cart-title" aria-hidden="true">
-            <div class="modal-backdrop" data-action="close-cart"></div>
+        <section id="checkout-modal" class="payment-modal hidden" aria-hidden="true">
+            <div class="modal-backdrop"></div>
             <div class="modal-panel">
-                <button class="modal-close" type="button" data-action="close-cart" aria-label="Close cart">×</button>
-                <h2 id="cart-title">Your Cart</h2>
-                <div id="cart-items" class="cart-items"></div>
-                <div id="cart-total" class="cart-total"></div>
-                <button id="checkout-btn" class="btn btn-primary" disabled>Proceed to Checkout</button>
-            </div>
-        </section>
-
-        <section id="checkout-modal" class="payment-modal hidden" role="dialog" aria-labelledby="checkout-title" aria-hidden="true">
-            <div class="modal-backdrop" data-action="close-checkout"></div>
-            <div class="modal-panel">
-                <button class="modal-close" type="button" data-action="close-checkout" aria-label="Close checkout">×</button>
-                <h2 id="checkout-title">Checkout</h2>
-                <div id="checkout-items" class="checkout-items"></div>
+                <button class="modal-close" type="button" aria-label="Close checkout">×</button>
+                <h2>Checkout</h2>
+                <p class="selected-product-label">
+                    Selected product: <strong id="checkout-product-name"></strong>
+                </p>
+        
                 <div class="payment-tabs">
                     <button type="button" class="tab active" data-method="paypal">PayPal Sandbox</button>
                     <button type="button" class="tab" data-method="stripe">Stripe Test</button>
                 </div>
+        
                 <div class="payment-sections">
                     <div id="paypal-panel" class="payment-panel active">
                         <div id="paypal-button-container"></div>
                         <p class="helper-text">Use the PayPal sandbox to simulate payment and confirmation.</p>
                     </div>
+        
                     <div id="stripe-panel" class="payment-panel">
                         <form id="stripe-form">
                             <label>
@@ -190,6 +175,7 @@
                         <p class="helper-text">Enter the Stripe test card above and submit to simulate a payment.</p>
                     </div>
                 </div>
+        
                 <div id="payment-message" class="payment-message"></div>
             </div>
         </section>
@@ -212,5 +198,6 @@
     </footer>
     <script src="scripts/main.js"></script>
     <script src="scripts/cart.js"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD" defer></script>
 </body>
 </html>

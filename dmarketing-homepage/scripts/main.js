@@ -148,3 +148,14 @@ categorySelect.addEventListener("change", applyFilters);
 document.addEventListener("DOMContentLoaded", () => {
     renderCatalog(products);
 });
+const emailForm = document.getElementById("email-form");
+const emailFeedback = document.getElementById("email-feedback");
+
+if (emailForm) {
+    emailForm.addEventListener("submit", event => {
+        event.preventDefault();
+        emailFeedback.textContent = "Thanks! We’ve received your request. Check your inbox to confirm.";
+        emailFeedback.style.color = "#a2d8ff";
+        emailForm.reset();
+    });
+}

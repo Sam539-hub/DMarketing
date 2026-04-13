@@ -135,6 +135,49 @@
 
             <div id="catalog-grid" class="catalog-grid"></div>
         </section>
+                <section id="checkout-modal" class="payment-modal hidden" aria-hidden="true">
+            <div class="modal-backdrop"></div>
+            <div class="modal-panel">
+                <button class="modal-close" type="button" aria-label="Close checkout">×</button>
+                <h2>Checkout</h2>
+                <p class="selected-product-label">
+                    Selected product: <strong id="checkout-product-name"></strong>
+                </p>
+        
+                <div class="payment-tabs">
+                    <button type="button" class="tab active" data-method="paypal">PayPal Sandbox</button>
+                    <button type="button" class="tab" data-method="stripe">Stripe Test</button>
+                </div>
+        
+                <div class="payment-sections">
+                    <div id="paypal-panel" class="payment-panel active">
+                        <div id="paypal-button-container"></div>
+                        <p class="helper-text">Use the PayPal sandbox to simulate payment and confirmation.</p>
+                    </div>
+        
+                    <div id="stripe-panel" class="payment-panel">
+                        <form id="stripe-form">
+                            <label>
+                                Card number
+                                <input id="stripe-card-number" type="text" placeholder="4242 4242 4242 4242" required>
+                            </label>
+                            <label>
+                                Expiry
+                                <input id="stripe-card-expiry" type="text" placeholder="12/34" required>
+                            </label>
+                            <label>
+                                CVC
+                                <input id="stripe-card-cvc" type="text" placeholder="123" required>
+                            </label>
+                            <button type="submit" class="btn btn-primary">Pay with Stripe</button>
+                        </form>
+                        <p class="helper-text">Enter the Stripe test card above and submit to simulate a payment.</p>
+                    </div>
+                </div>
+        
+                <div id="payment-message" class="payment-message"></div>
+            </div>
+        </section>
 
         <section id="about" class="about container">
             <h2>About Us</h2>
@@ -155,3 +198,8 @@
     <script src="scripts/main.js"></script>
 </body>
 </html>
+<head>
+    ...
+    <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD" defer></script>
+    <link rel="stylesheet" href="styles/main.css">
+</head>

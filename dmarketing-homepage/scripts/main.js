@@ -12,13 +12,12 @@ const searchInput = document.getElementById("catalog-search");
 const categorySelect = document.getElementById("catalog-category");
 
 function renderCatalog(items) {
+    console.log("Rendering catalog with", items.length, "items"); // Debug
     catalogGrid.innerHTML = "";
-
     if (!items.length) {
         catalogGrid.innerHTML = "<p class='empty-state'>No products match your search.</p>";
         return;
     }
-
     items.forEach(product => {
         const card = document.createElement("article");
         card.className = "product-card";
@@ -31,12 +30,14 @@ function renderCatalog(items) {
         `;
         catalogGrid.appendChild(card);
     });
-
     document.querySelectorAll(".add-to-cart-btn").forEach(button => {
         button.addEventListener("click", event => {
             const title = event.currentTarget.dataset.title;
             const product = products.find(item => item.title === title);
-            addToCart(product);
+            if (product) {
+                console.log("Adding to cart:", product); // Debug
+                addToCart(product);
+            }
         });
     });
 }
@@ -44,16 +45,11 @@ function renderCatalog(items) {
 function applyFilters() {
     const query = searchInput.value.trim().toLowerCase();
     const category = categorySelect.value;
-
     const filtered = products.filter(product => {
-        const matchesSearch =
-            product.title.toLowerCase().includes(query) ||
-            product.description.toLowerCase().includes(query) ||
-            product.category.toLowerCase().includes(query);
+        const matchesSearch = product.title.toLowerCase().includes(query) || product.description.toLowerCase().includes(query) || product.category.toLowerCase().includes(query);
         const matchesCategory = category === "all" || product.category === category;
         return matchesSearch && matchesCategory;
     });
-
     renderCatalog(filtered);
 }
 
@@ -61,5 +57,6 @@ searchInput.addEventListener("input", applyFilters);
 categorySelect.addEventListener("change", applyFilters);
 
 document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOM loaded, initializing catalog"); // Debug
     renderCatalog(products);
 });

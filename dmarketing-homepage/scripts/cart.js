@@ -17,6 +17,7 @@ const paymentTabs = document.querySelectorAll(".payment-tabs .tab");
 function updateCartCount() {
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     cartCount.textContent = totalItems;
+    console.log("Cart count updated to", totalItems); // Debug
 }
 
 function saveCart() {
@@ -64,7 +65,6 @@ function renderCart() {
         checkoutBtn.disabled = true;
         return;
     }
-
     let total = 0;
     cart.forEach(item => {
         const itemTotal = parseFloat(item.price.replace("$", "")) * item.quantity;
@@ -85,21 +85,15 @@ function renderCart() {
         `;
         cartItems.appendChild(itemEl);
     });
-
     cartTotal.textContent = `Total: $${total.toFixed(2)}`;
     checkoutBtn.disabled = false;
-
     document.querySelectorAll(".cart-item-controls button").forEach(button => {
         button.addEventListener("click", event => {
             const title = event.currentTarget.dataset.title;
             const action = event.currentTarget.dataset.action;
-            if (action === "increase") {
-                updateQuantity(title, cart.find(item => item.title === title).quantity + 1);
-            } else if (action === "decrease") {
-                updateQuantity(title, cart.find(item => item.title === title).quantity - 1);
-            } else if (action === "remove") {
-                removeFromCart(title);
-            }
+            if (action === "increase") updateQuantity(title, cart.find(item => item.title === title).quantity + 1);
+            else if (action === "decrease") updateQuantity(title, cart.find(item => item.title === title).quantity - 1);
+            else if (action === "remove") removeFromCart(title);
         });
     });
 }
@@ -128,7 +122,6 @@ function openCheckout() {
     totalEl.className = "checkout-item";
     totalEl.innerHTML = `<strong>Total</strong><strong>$${total.toFixed(2)}</strong>`;
     checkoutItems.appendChild(totalEl);
-
     setActivePayment("paypal");
     checkoutModal.classList.remove("hidden");
     renderPayPalButtons();

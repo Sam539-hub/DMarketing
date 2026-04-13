@@ -56,7 +56,6 @@
                     <h3>SEO</h3>
                     <p>Improve your website ranking, increase organic traffic, and get found by customers searching online.</p>
                 </article>
-
                 <article class="service-card">
                     <div class="service-icon">
                         <svg viewBox="0 0 64 64" aria-hidden="true">
@@ -68,7 +67,6 @@
                     <h3>Email Marketing</h3>
                     <p>Create targeted campaigns, nurture leads, and keep customers engaged with effective messaging.</p>
                 </article>
-
                 <article class="service-card">
                     <div class="service-icon">
                         <svg viewBox="0 0 64 64" aria-hidden="true">
@@ -80,7 +78,6 @@
                     <h3>Social Media Marketing</h3>
                     <p>Build your brand across social channels, increase engagement, and drive more traffic to your website.</p>
                 </article>
-
                 <article class="service-card">
                     <div class="service-icon">
                         <svg viewBox="0 0 64 64" aria-hidden="true">
@@ -92,7 +89,6 @@
                     <h3>Mobile Marketing</h3>
                     <p>Reach customers on mobile devices with SMS, app campaigns, and mobile-first advertising.</p>
                 </article>
-
                 <article class="service-card">
                     <div class="service-icon">
                         <svg viewBox="0 0 64 64" aria-hidden="true">
@@ -106,7 +102,6 @@
                     <h3>Affiliate Marketing</h3>
                     <p>Partner with influencers and publishers to drive sales through performance-based marketing.</p>
                 </article>
-
                 <article class="service-card">
                     <div class="service-icon">
                         <svg viewBox="0 0 64 64" aria-hidden="true">
@@ -126,7 +121,6 @@
                 <h2>Product Catalog</h2>
                 <p>Search and filter our marketing products by category.</p>
             </div>
-
             <div class="catalog-controls">
                 <input id="catalog-search" type="search" placeholder="Search products..." aria-label="Search products">
                 <select id="catalog-category" aria-label="Filter by category">
@@ -139,7 +133,6 @@
                     <option value="PPC">Pay Per Click (PPC)</option>
                 </select>
             </div>
-
             <div id="catalog-grid" class="catalog-grid">
                 <p class="loading-state">Loading products...</p>
             </div>
@@ -173,18 +166,9 @@
                     </div>
                     <div id="stripe-panel" class="payment-panel">
                         <form id="stripe-form">
-                            <label>
-                                Card number
-                                <input id="stripe-card-number" type="text" placeholder="4242 4242 4242 4242" required>
-                            </label>
-                            <label>
-                                Expiry
-                                <input id="stripe-card-expiry" type="text" placeholder="12/34" required>
-                            </label>
-                            <label>
-                                CVC
-                                <input id="stripe-card-cvc" type="text" placeholder="123" required>
-                            </label>
+                            <label>Card number <input id="stripe-card-number" type="text" placeholder="4242 4242 4242 4242" required></label>
+                            <label>Expiry <input id="stripe-card-expiry" type="text" placeholder="12/34" required></label>
+                            <label>CVC <input id="stripe-card-cvc" type="text" placeholder="123" required></label>
                             <button type="submit" class="btn btn-primary">Pay with Stripe</button>
                         </form>
                         <p class="helper-text">Enter the Stripe test card above and submit to simulate a payment.</p>

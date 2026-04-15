@@ -5,6 +5,8 @@
     --bg: linear-gradient(135deg, #f0f8ff 0%, #fffacd 100%); /* Light blue to light yellow gradient */
     --card-bg: #fff; /* White for cards */
     --shadow: rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    --selected-bg: #e3f2fd; /* Light blue for selected products */
+    --selected-border: #007bff; /* Accent color for selected border */
 }
 
 * {
@@ -112,6 +114,11 @@ nav a:hover {
     width: 64px;
     height: 64px;
     margin: 0 auto 1rem;
+    transition: transform 0.3s;
+}
+
+.service-icon:hover {
+    transform: scale(1.1);
 }
 
 .service-card h3 {
@@ -155,6 +162,19 @@ nav a:hover {
     border: 1px solid #ddd;
     background: var(--card-bg);
     color: var(--text);
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.catalog-controls select {
+    background: var(--card-bg); /* More visible background */
+    border: 2px solid var(--accent); /* More visible border */
+    color: var(--text);
+}
+
+.catalog-controls select:focus {
+    border-color: var(--selected-border);
+    box-shadow: 0 0 5px var(--shadow);
 }
 
 .catalog-grid {
@@ -168,13 +188,20 @@ nav a:hover {
     border-radius: 16px;
     padding: 1.5rem;
     box-shadow: 0 4px 8px var(--shadow);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
     color: var(--text);
+    border: 2px solid transparent; /* For selected border */
 }
 
 .product-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px var(--shadow);
+}
+
+.product-card.selected {
+    background: var(--selected-bg);
+    border-color: var(--selected-border);
+    box-shadow: 0 6px 12px var(--shadow);
 }
 
 .product-category {
@@ -190,6 +217,7 @@ nav a:hover {
 .product-card h3 {
     margin-bottom: 0.5rem;
     color: var(--text);
+    font-weight: bold; /* Bold product names */
 }
 
 .product-card p {
@@ -210,11 +238,27 @@ nav a:hover {
     background: var(--accent);
     color: #fff;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s;
 }
 
 .add-to-cart-btn:hover {
     background: #0056b3;
+}
+
+.add-to-cart-btn.animate {
+    animation: bounce 0.6s ease;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
 }
 
 .empty-state {
@@ -474,4 +518,53 @@ footer {
     .catalog-grid {
         grid-template-columns: 1fr;
     }
+}
+/* Service card link styling - Remove default anchor appearance */
+.service-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.service-link:hover,
+.service-link:visited,
+.service-link:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Ensure service card inherits proper styling */
+.service-card.service-link {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: var(--text);
+}
+
+.service-card.service-link:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px var(--shadow);
+    background: var(--card-bg);
+}
+
+/* Icon hover effect */
+.service-link .service-icon {
+    transition: transform 0.3s ease;
+}
+
+.service-link:hover .service-icon {
+    transform: scale(1.15);
+}
+
+/* Override any default link colors */
+.service-link h3 {
+    color: var(--text);
+}
+
+.service-link p {
+    color: var(--muted);
 }

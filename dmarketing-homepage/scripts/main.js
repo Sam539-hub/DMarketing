@@ -21,6 +21,11 @@ function renderCatalog(items) {
     items.forEach(product => {
         const card = document.createElement("article");
         card.className = "product-card";
+        // Check if product is in cart to add selected class
+        const isInCart = cart.some(item => item.title === product.title);
+        if (isInCart) {
+            card.classList.add("selected");
+        }
         card.innerHTML = `
             <span class="product-category">${product.category}</span>
             <h3>${product.title}</h3>
@@ -37,6 +42,11 @@ function renderCatalog(items) {
             if (product) {
                 console.log("Adding to cart:", product); // Debug
                 addToCart(product);
+                // Add animation
+                event.currentTarget.classList.add("animate");
+                setTimeout(() => event.currentTarget.classList.remove("animate"), 600);
+                // Re-render to update selected state
+                applyFilters();
             }
         });
     });

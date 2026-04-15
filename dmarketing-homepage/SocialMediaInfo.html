@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Marketing | DMarketing</title>
+    <meta name="description" content="Build your brand across social channels with DMarketing's social media marketing services.">
+    <meta name="keywords" content="social media marketing, social media management, instagram, facebook, twitter, tiktok">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <h1><a href="index.html" style="color: inherit; text-decoration: none;">DMarketing</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#catalog">Catalog</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+            <button id="cart-toggle" class="cart-toggle" aria-label="Open cart">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 4V2C7 1.45 7.45 1 8 1H16C16.55 1 17 1.45 17 2V4H20C20.55 4 21 4.45 21 5S20.55 6 20 6H19V19C19 20.1 18.1 21 17 21H7C5.9 21 5 20.1 5 19V6H4C3.45 6 3 5.55 3 5S3.45 4 4 4H7ZM9 3V4H15V3H9ZM7 6V19H17V6H7Z"/>
+                </svg>
+                <span id="cart-count" class="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Social Media Marketing</h2>
+                <p>Build your brand across social channels, increase engagement, and drive more traffic to your website.</p>
+            </div>
+        </section>
+
+        <section class="service-detail container">
+            <div class="detail-content">
+                <h2>What We Offer</h2>
+                <p>Our social media marketing services help you connect with your audience where they spend their time. We create engaging content, manage your accounts, and build communities around your brand.</p>
+
+                <h3>Our Services Include:</h3>
+                <ul>
+                    <li><strong>Content Strategy:</strong> Develop a tailored social media strategy that aligns with your business goals</li>
+                    <li><strong>Content Creation:</strong> High-quality posts, graphics, and videos optimized for each platform</li>
+                    <li><strong>Community Management:</strong> Engage with your audience and build lasting relationships</li>
+                    <li><strong>Paid Advertising:</strong> Run targeted campaigns on Facebook, Instagram, TikTok, and LinkedIn</li>
+                    <li><strong>Analytics & Reporting:</strong> Track performance and measure ROI with detailed monthly reports</li>
+                    <li><strong>Influencer Partnerships:</strong> Connect with relevant influencers to expand your reach</li>
+                </ul>
+
+                <h3>Platforms We Manage:</h3>
+                <div class="platform-grid">
+                    <div class="platform-card">
+                        <h4>Facebook</h4>
+                        <p>Build community and run targeted ads to reach your audience</p>
+                    </div>
+                    <div class="platform-card">
+                        <h4>Instagram</h4>
+                        <p>Showcase your brand with visual content and Stories</p>
+                    </div>
+                    <div class="platform-card">
+                        <h4>TikTok</h4>
+                        <p>Reach younger audiences with trending, creative content</p>
+                    </div>
+                    <div class="platform-card">
+                        <h4>LinkedIn</h4>
+                        <p>Build B2B relationships and establish thought leadership</p>
+                    </div>
+                    <div class="platform-card">
+                        <h4>Twitter/X</h4>
+                        <p>Engage in real-time conversations and build your brand voice</p>
+                    </div>
+                    <div class="platform-card">
+                        <h4>YouTube</h4>
+                        <p>Create and optimize video content for maximum reach</p>
+                    </div>
+                </div>
+
+                <h3>Why Choose DMarketing?</h3>
+                <ul>
+                    <li>Experienced team with proven track record</li>
+                    <li>Custom strategies tailored to your business</li>
+                    <li>Data-driven approach to maximize ROI</li>
+                    <li>Regular reporting and transparent communication</li>
+                    <li>Continuous optimization and improvement</li>
+                </ul>
+            </div>
+
+            <aside class="detail-sidebar">
+                <div class="cta-box">
+                    <h3>Ready to Grow Your Social Presence?</h3>
+                    <p>Let's create a social media strategy that drives real results for your business.</p>
+                    <button class="btn btn-primary" onclick="document.getElementById('contact-modal').classList.remove('hidden')">Get Started</button>
+                </div>
+            </aside>
+        </section>
+
+        <section id="contact-modal" class="cart-modal hidden" role="dialog" aria-labelledby="contact-title" aria-hidden="true">
+            <div class="modal-backdrop" data-action="close-contact"></div>
+            <div class="modal-panel">
+                <button class="modal-close" type="button" data-action="close-contact" aria-label="Close">×</button>
+                <h2 id="contact-title">Contact Us</h2>
+                <form id="contact-form">
+                    <label>Name <input type="text" required></label>
+                    <label>Email <input type="email" required></label>
+                    <label>Company <input type="text"></label>
+                    <label>Message <textarea rows="5" required></textarea></label>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 DMarketing. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

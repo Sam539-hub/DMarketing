@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affiliate Marketing | DMarketing</title>
+    <meta name="description" content="Partner with influencers and publishers through DMarketing's affiliate marketing services. Drive sales with performance-based marketing.">
+    <meta name="keywords" content="affiliate marketing, influencer marketing, performance marketing, affiliate programs, DMarketing">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <h1><a href="index.html" style="color: inherit; text-decoration: none;">DMarketing</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#catalog">Catalog</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+            <button id="cart-toggle" class="cart-toggle" aria-label="Open cart">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 4V2C7 1.45 7.45 1 8 1H16C16.55 1 17 1.45 17 2V4H20C20.55 4 21 4.45 21 5S20.55 6 20 6H19V19C19 20.1 18.1 21 17 21H7C5.9 21 5 20.1 5 19V6H4C3.45 6 3 5.55 3 5S3.45 4 4 4H7ZM9 3V4H15V3H9ZM7 6V19H17V6H7Z"/>
+                </svg>
+                <span id="cart-count" class="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Affiliate Marketing</h2>
+                <p>Partner with influencers and publishers to drive sales through performance-based marketing.</p>
+            </div>
+        </section>
+
+        <section class="service-detail container">
+            <div class="detail-content">
+                <h2>What We Offer</h2>
+                <p>Our affiliate marketing services help you leverage partnerships with influencers, bloggers, and publishers to expand your reach and drive sales. We build and manage affiliate programs that deliver measurable results.</p>
+
+                <h3>Our Services Include:</h3>
+                <ul>
+                    <li><strong>Affiliate Program Setup:</strong> Design and launch custom affiliate programs with attractive commission structures</li>
+                    <li><strong>Partner Recruitment:</strong> Identify and onboard high-quality affiliates in your niche</li>
+                    <li><strong>Content Creation:</strong> Develop promotional materials and landing pages for affiliates</li>
+                    <li><strong>Performance Tracking:</strong> Monitor conversions, clicks, and commissions with advanced analytics</li>
+                    <li><strong>Influencer Marketing:</strong> Partner with social media influencers for authentic brand promotion</li>
+                    <li><strong>Analytics & Reporting:</strong> Detailed reports on ROI, partner performance, and campaign effectiveness</li>
+                </ul>
+
+                <h3>Affiliate Marketing Types:</h3>
+                <div class="platform-grid">
+                    <div class="platform-card">
+                        <h4>Influencer Partnerships</h4>
+                        <p>Collaborate with social media influencers for authentic promotion</p>
+                    </div>
+                    <div class="platform-card">
+                        <h4>Content Affiliates</h4>
+                        <p>Bloggers and publishers who create content featuring your products</p>
+                    </div>
+                    <div class="platform-card">
+                        <h4>Email Affiliates</h4>
+                        <p>Newsletter owners who promote your offers to their subscribers</p>
+                    </div>
+                    <div class="platform-card">
+                        <h4>Coupon Affiliates</h4>
+                        <p>Deal sites and coupon aggregators for discount-driven traffic</p>
+                    </div>
+                    <div class="platform-card">
+                        <h4>Loyalty Programs</h4>
+                        <p>Reward existing customers for referrals and advocacy</p>
+                    </div>
+                    <div class="platform-card">
+                        <h4>Comparison Shopping</h4>
+                        <p>Product comparison sites that drive qualified traffic</p>
+                    </div>
+                </div>
+
+                <h3>Why Choose DMarketing?</h3>
+                <ul>
+                    <li>Proven affiliate network partnerships</li>
+                    <li>Transparent commission tracking and payments</li>
+                    <li>Risk-free performance-based model</li>
+                    <li>Expert affiliate management and optimization</li>
+                    <li>Compliance with affiliate marketing regulations</li>
+                </ul>
+            </div>
+
+            <aside class="detail-sidebar">
+                <div class="cta-box">
+                    <h3>Ready to Launch Your Affiliate Program?</h3>
+                    <p>Let's build partnerships that drive sales and expand your reach.</p>
+                    <button class="btn btn-primary" onclick="document.getElementById('contact-modal').classList.remove('hidden')">Get Started</button>
+                </div>
+            </aside>
+        </section>
+
+        <section id="contact-modal" class="cart-modal hidden" role="dialog" aria-labelledby="contact-title" aria-hidden="true">
+            <div class="modal-backdrop" data-action="close-contact"></div>
+            <div class="modal-panel">
+                <button class="modal-close" type="button" data-action="close-contact" aria-label="Close">×</button>
+                <h2 id="contact-title">Contact Us</h2>
+                <form id="contact-form">
+                    <label>Name <input type="text" required></label>
+                    <label>Email <input type="email" required></label>
+                    <label>Company <input type="text"></label>
+                    <label>Message <textarea rows="5" required></textarea></label>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 DMarketing. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

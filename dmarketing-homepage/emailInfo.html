@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Marketing | DMarketing</title>
+    <meta name="description" content="Create targeted email campaigns with DMarketing. Nurture leads and keep customers engaged with effective messaging.">
+    <meta name="keywords" content="email marketing, email campaigns, lead nurturing, customer engagement, DMarketing">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <h1><a href="index.html" style="color: inherit; text-decoration: none;">DMarketing</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#catalog">Catalog</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+            <button id="cart-toggle" class="cart-toggle" aria-label="Open cart">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 4V2C7 1.45 7.45 1 8 1H16C16.55 1 17 1.45 17 2V4H20C20.55 4 21 4.45 21 5S20.55 6 20 6H19V19C19 20.1 18.1 21 17 21H7C5.9 21 5 20.1 5 19V6H4C3.45 6 3 5.55 3 5S3.45 4 4 4H7ZM9 3V4H15V3H9ZM7 6V19H17V6H7Z"/>
+                </svg>
+                <span id="cart-count" class="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Email Marketing</h2>
+                <p>Create targeted campaigns, nurture leads, and keep customers engaged with effective messaging.</p>
+            </div>
+        </section>
+
+        <section class="service-detail container">
+            <div class="detail-content">
+                <h2>What We Offer</h2>
+                <p>Our email marketing services help you build relationships with your audience through personalized, targeted campaigns. We design, execute, and optimize email strategies that drive conversions and customer loyalty.</p>
+
+                <h3>Our Services Include:</h3>
+                <ul>
+                    <li><strong>Email Strategy:</strong> Develop comprehensive email marketing plans aligned with your business goals</li>
+                    <li><strong>List Building:</strong> Grow your subscriber list with ethical opt-in methods</li>
+                    <li><strong>Campaign Design:</strong> Create visually appealing, mobile-responsive email templates</li>
+                    <li><strong>Automation:</strong> Set up triggered emails for welcome series, abandoned carts, and re-engagement</li>
+                    <li><strong>Segmentation:</strong> Target specific audience groups for higher engagement and conversions</li>
+                    <li><strong>Analytics & Reporting:</strong> Track open rates, click-through rates, and ROI with detailed reports</li>
+                </ul>
+
+                <h3>Email Campaign Types:</h3>
+                <div class="platform-grid">
+                    <div class="platform-card">
+                        <h4>Newsletter Campaigns</h4>
+                        <p>Regular updates to keep subscribers informed and engaged</p>
+                    </div>
+                    <div class="platform-card">
+                        <h4>Promotional Emails</h4>
+                        <p>Drive sales with special offers and limited-time deals</p>
+                    </div>
+                    <div class="platform-card">
+                        <h4>Welcome Series</h4>
+                        <p>Onboard new subscribers and introduce your brand</p>
+                    </div>
+                    <div class="platform-card">
+                        <h4>Lead Nurturing</h4>
+                        <p>Guide prospects through the sales funnel with targeted content</p>
+                    </div>
+                    <div class="platform-card">
+                        <h4>Re-engagement Campaigns</h4>
+                        <p>Win back inactive subscribers with personalized messaging</p>
+                    </div>
+                    <div class="platform-card">
+                        <h4>Transactional Emails</h4>
+                        <p>Order confirmations, shipping updates, and receipts</p>
+                    </div>
+                </div>
+
+                <h3>Why Choose DMarketing?</h3>
+                <ul>
+                    <li>Compliance with email marketing laws (CAN-SPAM, GDPR)</li>
+                    <li>High deliverability rates through proper authentication</li>
+                    <li>A/B testing to optimize campaign performance</li>
+                    <li>Integration with your CRM and e-commerce platforms</li>
+                    <li>Creative copywriting and design services</li>
+                </ul>
+            </div>
+
+            <aside class="detail-sidebar">
+                <div class="cta-box">
+                    <h3>Ready to Launch Your Email Campaigns?</h3>
+                    <p>Let's create email strategies that convert subscribers into customers.</p>
+                    <button class="btn btn-primary" onclick="document.getElementById('contact-modal').classList.remove('hidden')">Get Started</button>
+                </div>
+            </aside>
+        </section>
+
+        <section id="contact-modal" class="cart-modal hidden" role="dialog" aria-labelledby="contact-title" aria-hidden="true">
+            <div class="modal-backdrop" data-action="close-contact"></div>
+            <div class="modal-panel">
+                <button class="modal-close" type="button" data-action="close-contact" aria-label="Close">×</button>
+                <h2 id="contact-title">Contact Us</h2>
+                <form id="contact-form">
+                    <label>Name <input type="text" required></label>
+                    <label>Email <input type="email" required></label>
+                    <label>Company <input type="text"></label>
+                    <label>Message <textarea rows="5" required></textarea></label>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 DMarketing. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

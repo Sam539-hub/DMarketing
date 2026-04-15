@@ -1,0 +1,128 @@
+<!-- Create detailed PPC information page -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay Per Click (PPC) | DMarketing</title>
+    <meta name="description" content="Run paid search campaigns with DMarketing's PPC services. Deliver fast clicks and measurable ROI.">
+    <meta name="keywords" content="PPC, pay per click, paid search, Google Ads, Bing Ads, DMarketing">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <h1><a href="index.html" style="color: inherit; text-decoration: none;">DMarketing</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#catalog">Catalog</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+            <button id="cart-toggle" class="cart-toggle" aria-label="Open cart">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 4V2C7 1.45 7.45 1 8 1H16C16.55 1 17 1.45 17 2V4H20C20.55 4 21 4.45 21 5S20.55 6 20 6H19V19C19 20.1 18.1 21 17 21H7C5.9 21 5 20.1 5 19V6H4C3.45 6 3 5.55 3 5S3.45 4 4 4H7ZM9 3V4H15V3H9ZM7 6V19H17V6H7Z"/>
+                </svg>
+                <span id="cart-count" class="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Pay Per Click (PPC)</h2>
+                <p>Run paid search campaigns that deliver fast clicks and measurable ROI.</p>
+            </div>
+        </section>
+
+        <section class="service-detail container">
+            <div class="detail-content">
+                <h2>What We Offer</h2>
+                <p>Our PPC services help you appear at the top of search results instantly. We create and manage paid search campaigns on Google, Bing, and other platforms to drive targeted traffic and conversions.</p>
+
+                <h3>Our Services Include:</h3>
+                <ul>
+                    <li><strong>Campaign Strategy:</strong> Develop comprehensive PPC strategies aligned with your business goals</li>
+                    <li><strong>Keyword Research:</strong> Identify high-converting keywords with competitive analysis</li>
+                    <li><strong>Ad Creation:</strong> Write compelling ad copy and design effective landing pages</li>
+                    <li><strong>Bid Management:</strong> Optimize bids for maximum ROI and budget efficiency</li>
+                    <li><strong>A/B Testing:</strong> Test ad variations to improve performance and conversion rates</li>
+                    <li><strong>Analytics & Reporting:</strong> Track impressions, clicks, conversions, and ROI with detailed reports</li>
+                </ul>
+
+                <h3>PPC Platforms We Manage:</h3>
+                <div class="platform-grid">
+                    <div class="platform-card">
+                        <h4>Google Ads</h4>
+                        <p>Search, display, video, and shopping campaigns</p>
+                    </div>
+                    <div class="platform-card">
+                        <h4>Bing Ads</h4>
+                        <p>Reach audiences on Bing and Yahoo search networks</p>
+                    </div>
+                    <div class="platform-card">
+                        <h4>Facebook Ads</h4>
+                        <p>Social media advertising with precise targeting</p>
+                    </div>
+                    <div class="platform-card">
+                        <h4>Amazon PPC</h4>
+                        <p>Promote products on Amazon's marketplace</p>
+                    </div>
+                    <div class="platform-card">
+                        <h4>YouTube Ads</h4>
+                        <p>Video advertising for brand awareness and conversions</p>
+                    </div>
+                    <div class="platform-card">
+                        <h4>LinkedIn Ads</h4>
+                        <p>B2B advertising for professional audiences</p>
+                    </div>
+                </div>
+
+                <h3>Why Choose DMarketing?</h3>
+                <ul>
+                    <li>Certified PPC specialists with years of experience</li>
+                    <li>Data-driven optimization for maximum ROI</li>
+                    <li>Transparent reporting and budget control</li>
+                    <li>Integration with analytics and CRM systems</li>
+                    <li>Focus on quality score improvement and cost reduction</li>
+                </ul>
+            </div>
+
+            <aside class="detail-sidebar">
+                <div class="cta-box">
+                    <h3>Ready to Launch Your PPC Campaigns?</h3>
+                    <p>Let's create paid search strategies that drive immediate results.</p>
+                    <button class="btn btn-primary" onclick="document.getElementById('contact-modal').classList.remove('hidden')">Get Started</button>
+                </div>
+            </aside>
+        </section>
+
+        <section id="contact-modal" class="cart-modal hidden" role="dialog" aria-labelledby="contact-title" aria-hidden="true">
+            <div class="modal-backdrop" data-action="close-contact"></div>
+            <div class="modal-panel">
+                <button class="modal-close" type="button" data-action="close-contact" aria-label="Close">×</button>
+                <h2 id="contact-title">Contact Us</h2>
+                <form id="contact-form">
+                    <label>Name <input type="text" required></label>
+                    <label>Email <input type="email" required></label>
+                    <label>Company <input type="text"></label>
+                    <label>Message <textarea rows="5" required></textarea></label>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 DMarketing. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

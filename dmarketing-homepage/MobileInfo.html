@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Marketing | DMarketing</title>
+    <meta name="description" content="Reach customers on mobile devices with DMarketing's mobile marketing services. SMS, app campaigns, and mobile-first advertising.">
+    <meta name="keywords" content="mobile marketing, SMS marketing, mobile apps, mobile advertising, DMarketing">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <div class="container header-inner">
+            <h1><a href="index.html" style="color: inherit; text-decoration: none;">DMarketing</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#catalog">Catalog</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+            <button id="cart-toggle" class="cart-toggle" aria-label="Open cart">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 4V2C7 1.45 7.45 1 8 1H16C16.55 1 17 1.45 17 2V4H20C20.55 4 21 4.45 21 5S20.55 6 20 6H19V19C19 20.1 18.1 21 17 21H7C5.9 21 5 20.1 5 19V6H4C3.45 6 3 5.55 3 5S3.45 4 4 4H7ZM9 3V4H15V3H9ZM7 6V19H17V6H7Z"/>
+                </svg>
+                <span id="cart-count" class="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Mobile Marketing</h2>
+                <p>Reach customers on mobile devices with SMS, app campaigns, and mobile-first advertising.</p>
+            </div>
+        </section>
+
+        <section class="service-detail container">
+            <div class="detail-content">
+                <h2>What We Offer</h2>
+                <p>With mobile usage surpassing desktop, our mobile marketing services help you connect with customers wherever they are. We create targeted mobile campaigns that drive engagement and conversions on smartphones and tablets.</p>
+
+                <h3>Our Services Include:</h3>
+                <ul>
+                    <li><strong>SMS Marketing:</strong> Send targeted text messages with offers and updates to opt-in subscribers</li>
+                    <li><strong>Mobile App Marketing:</strong> Promote your app through ASO, user acquisition, and retention campaigns</li>
+                    <li><strong>Mobile Advertising:</strong> Run banner ads, native ads, and video ads on mobile platforms</li>
+                    <li><strong>Location-Based Marketing:</strong> Target users based on their geographic location</li>
+                    <li><strong>Mobile Website Optimization:</strong> Ensure your site is mobile-friendly and loads quickly</li>
+                    <li><strong>Analytics & Reporting:</strong> Track mobile campaign performance and user behavior</li>
+                </ul>
+
+                <h3>Mobile Marketing Channels:</h3>
+                <div class="platform-grid">
+                    <div class="platform-card">
+                        <h4>SMS/Text Messaging</h4>
+                        <p>High open rates for time-sensitive offers and alerts</p>
+                    </div>
+                    <div class="platform-card">
+                        <h4>Mobile Apps</h4>
+                        <p>In-app advertising and push notifications</p>
+                    </div>
+                    <div class="platform-card">
+                        <h4>Mobile Search</h4>
+                        <p>Optimize for mobile search and local results</p>
+                    </div>
+                    <div class="platform-card">
+                        <h4>Mobile Social Media</h4>
+                        <p>Targeted ads on Facebook, Instagram, and TikTok mobile</p>
+                    </div>
+                    <div class="platform-card">
+                        <h4>Mobile Email</h4>
+                        <p>Mobile-optimized email campaigns and newsletters</p>
+                    </div>
+                    <div class="platform-card">
+                        <h4>Geofencing</h4>
+                        <p>Location-based targeting for proximity marketing</p>
+                    </div>
+                </div>
+
+                <h3>Why Choose DMarketing?</h3>
+                <ul>
+                    <li>Compliance with mobile marketing regulations (TCPA, CTIA)</li>
+                    <li>Advanced segmentation for precise targeting</li>
+                    <li>Integration with mobile analytics platforms</li>
+                    <li>Creative mobile ad formats and messaging</li>
+                    <li>Focus on mobile user experience and conversion optimization</li>
+                </ul>
+            </div>
+
+            <aside class="detail-sidebar">
+                <div class="cta-box">
+                    <h3>Ready to Go Mobile?</h3>
+                    <p>Let's create mobile marketing strategies that reach your audience on the go.</p>
+                    <button class="btn btn-primary" onclick="document.getElementById('contact-modal').classList.remove('hidden')">Get Started</button>
+                </div>
+            </aside>
+        </section>
+
+        <section id="contact-modal" class="cart-modal hidden" role="dialog" aria-labelledby="contact-title" aria-hidden="true">
+            <div class="modal-backdrop" data-action="close-contact"></div>
+            <div class="modal-panel">
+                <button class="modal-close" type="button" data-action="close-contact" aria-label="Close">×</button>
+                <h2 id="contact-title">Contact Us</h2>
+                <form id="contact-form">
+                    <label>Name <input type="text" required></label>
+                    <label>Email <input type="email" required></label>
+                    <label>Company <input type="text"></label>
+                    <label>Message <textarea rows="5" required></textarea></label>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 DMarketing. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

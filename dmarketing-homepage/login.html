@@ -1,88 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DMarketing | Secure Login</title>
-    <meta name="description" content="Secure login page for DMarketing with password hashing, CAPTCHA, and validation.">
+    <title>DMarketing Login</title>
     <link rel="stylesheet" href="styles/main.css">
 </head>
+
 <body class="auth-page">
-    <header>
-        <div class="container header-inner">
-            <h1>DMarketing</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="login.html" class="active">Login</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <main class="auth-container">
-        <section class="auth-card" aria-labelledby="auth-title">
-            <div class="auth-header" role="tablist" aria-label="Authentication tabs">
-                <button type="button" class="auth-tab active" data-target="login-form" role="tab" aria-selected="true">Login</button>
-                <button type="button" class="auth-tab" data-target="register-form" role="tab" aria-selected="false">Register</button>
-            </div>
+<div class="auth-container">
+  <div class="auth-card">
 
-            <div class="auth-content">
-                <form id="login-form" class="auth-form active" novalidate>
-                    <h2 id="auth-title">Secure Login</h2>
-                    <div class="auth-field">
-                        <label for="login-email">Email</label>
-                        <input id="login-email" name="email" type="email" autocomplete="email" required>
-                    </div>
-                    <div class="auth-field">
-                        <label for="login-password">Password</label>
-                        <input id="login-password" name="password" type="password" autocomplete="current-password" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Sign In</button>
-                </form>
+    <h2>Login / Register</h2>
 
-                <form id="register-form" class="auth-form" novalidate>
-                    <h2>Create Account</h2>
-                    <div class="auth-field">
-                        <label for="register-email">Email</label>
-                        <input id="register-email" name="email" type="email" autocomplete="email" required>
-                    </div>
-                    <div class="auth-field">
-                        <label for="register-password">Password</label>
-                        <input id="register-password" name="password" type="password" autocomplete="new-password" required>
-                    </div>
-                    <div class="auth-field">
-                        <label for="register-confirm-password">Confirm Password</label>
-                        <input id="register-confirm-password" name="confirm-password" type="password" autocomplete="new-password" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Register</button>
-                </form>
+    <!-- LOGIN -->
+    <h3>Login</h3>
+    <input type="email" id="login-email" placeholder="Email">
+    <input type="password" id="login-password" placeholder="Password">
+    <button onclick="login()">Login</button>
 
-                <div class="captcha-panel">
-                    <div class="captcha-label">CAPTCHA challenge</div>
-                    <div class="captcha-sprite" aria-live="polite" aria-atomic="true">
-                        <span id="captcha-text"></span>
-                        <button id="reload-captcha" type="button" class="btn btn-secondary">Refresh</button>
-                    </div>
-                    <label for="captcha-input" class="auth-field">
-                        <span>Type the code shown above</span>
-                        <input id="captcha-input" name="captcha" type="text" autocomplete="off" required>
-                    </label>
-                </div>
+    <hr>
 
-                <p id="auth-status" class="auth-status" aria-live="polite"></p>
-            </div>
-        </section>
-    </main>
+    <!-- REGISTER -->
+    <h3>Register</h3>
+    <input type="email" id="register-email" placeholder="Email">
+    <input type="password" id="register-password" placeholder="Password">
+    <button onclick="register()">Register</button>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 DMarketing. All rights reserved.</p>
-        </div>
-    </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bcryptjs/2.4.3/bcrypt.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.19.0/js/md5.min.js" defer></script>
-    <script src="scripts/login.js" defer></script>
+    <p id="msg"></p>
+
+  </div>
+</div>
+
+<script>
+function register(){
+    let email = document.getElementById("register-email").value;
+    let password = document.getElementById("register-password").value;
+
+    let users = JSON.parse(localStorage.getItem("users") || "{}");
+
+    if(users[email]){
+        document.getElementById("msg").innerText = "User already exists";
+        return;
+    }
+
+    users[email] = password;
+    localStorage.setItem("users", JSON.stringify(users));
+
+    let msg = document.getElementById("msg");
+msg.innerText = "Registered successfully!";
+msg.className = "success";
+}
+
+function login(){
+    let email = document.getElementById("login-email").value;
+    let password = document.getElementById("login-password").value;
+
+    let users = JSON.parse(localStorage.getItem("users") || "{}");
+
+    if(users[email] === password){
+        localStorage.setItem("loggedIn", "true");
+        window.location.href = "index.html";
+    } else {
+        document.getElementById("msg").innerText = "Invalid login";
+    }
+}
+</script>
+
 </body>
 </html>

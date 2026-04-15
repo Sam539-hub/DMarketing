@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication Test</title>
+</head>
+<body>
+    <h1>DMarketing Authentication Test</h1>
+
+    <div id="test-results">
+        <h2>Test Results:</h2>
+        <div id="output"></div>
+    </div>
+
+    <div id="manual-test">
+        <h2>Manual Test:</h2>
+        <button onclick="testRegistration()">Test Registration</button>
+        <button onclick="testLogin()">Test Login</button>
+        <button onclick="testSession()">Test Session</button>
+        <button onclick="clearData()">Clear All Data</button>
+    </div>
+
+    <script>
+        const output = document.getElementById("output");
+
+        function log(message) {
+            output.innerHTML += "<p>" + message + "</p>";
+            console.log(message);
+        }
+
+        function testRegistration() {
+            log("=== Testing Registration ===");
+
+            // Simulate user registration
+            const testEmail = "test@example.com";
+            const testPassword = "TestPass123";
+
+            // Get existing users
+            const users = JSON.parse(localStorage.getItem("dmarketing_users") || "{}");
+            log("Existing users: " + Object.keys(users).length);
+
+            // Register new user
+            users[testEmail] = {
+                email: testEmail,
+                password: testPassword,
+                createdAt: new Date().toISOString()
+            };
+
+            localStorage.setItem("dmarketing_users", JSON.stringify(users));
+            log("✓ User registered: " + testEmail);
+
+            // Verify user was saved
+            const savedUsers = JSON.parse(localStorage.getItem("dmarketing_users") || "{}");
+            if (savedUsers[testEmail]) {
+                log("✓ User data saved successfully");
+            } else {
+                log("❌ User data NOT saved");
+            }
+        }
+
+        function testLogin() {
+            log("=== Testing Login ===");
+
+            const testEmail = "test@example.com";
+            const testPassword = "TestPass123";
+
+            // Get users
+            const users = JSON.parse(localStorage.getItem("dmarketing_users") || "{}");
+            const user = users[testEmail];
+
+            if (!user) {
+                log("❌ User not found");
+                return;
+            }
+
+            if (user.password === testPassword) {
+                log("✓ Password correct");
+
+                // Set session
+                localStorage.setItem("dmarketing_logged_in", "true");
+                localStorage.setItem("dmarketing_current_user", testEmail);
+                log("✓ Session created");
+            } else {
+                log("❌ Password incorrect");
+            }
+        }
+
+        function testSession() {
+            log("=== Testing Session ===");
+
+            const isLoggedIn = localStorage.getItem("dmarketing_logged_in") === "true";
+            const currentUser = localStorage.getItem("dmarketing_current_user");
+
+            log("Logged in: " + isLoggedIn);
+            log("Current user: " + currentUser);
+
+            if (isLoggedIn && currentUser) {
+                log("✓ Session is valid");
+            } else {
+                log("❌ Session is invalid");
+            }
+        }
+
+        function clearData() {
+            log("=== Clearing All Data ===");
+            localStorage.removeItem("dmarketing_users");
+            localStorage.removeItem("dmarketing_logged_in");
+            localStorage.removeItem("dmarketing_current_user");
+            localStorage.removeItem("dmarketing_auth");
+            log("✓ All data cleared");
+        }
+
+        // Run initial tests
+        log("=== Initial Test ===");
+        testSession();
+    </script>
+</body>
+</html>

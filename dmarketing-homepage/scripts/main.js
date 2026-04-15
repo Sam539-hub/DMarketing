@@ -1,5 +1,5 @@
 const products = [
-    { title: "SEO Audit Package", category: "SEO", description: "Full website audit, keyword research, and optimization plan.", price: "$199", url: "product.html" },
+    { title: "SEO Audit Package", category: "SEO", description: "Full website audit, keyword research, and optimization plan.", price: "$199", url: "SEO.html" },
     { title: "Email Campaign Setup", category: "Email Marketing", description: "Design and launch targeted email campaigns with automation.", price: "$149", url: "product-email.html" },
     { title: "Social Media Growth Plan", category: "Social Media Marketing", description: "Strategy for organic growth, engagement, and content planning.", price: "$179", url: "product-social.html" },
     { title: "Mobile App Promotion", category: "Mobile Marketing", description: "Drive installs and engagement through mobile-first advertising.", price: "$169", url: "MobileMarketing.html" },

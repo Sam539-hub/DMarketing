@@ -1,10 +1,10 @@
 const products = [
-    { title: "SEO Audit Package", category: "SEO", description: "Full website audit, keyword research, and optimization plan.", price: "$199" },
-    { title: "Email Campaign Setup", category: "Email Marketing", description: "Design and launch targeted email campaigns with automation.", price: "$149" },
-    { title: "Social Media Growth Plan", category: "Social Media Marketing", description: "Strategy for organic growth, engagement, and content planning.", price: "$179" },
-    { title: "Mobile App Promotion", category: "Mobile Marketing", description: "Drive installs and engagement through mobile-first advertising.", price: "$169" },
-    { title: "Affiliate Program Launch", category: "Affiliate Marketing", description: "Set up affiliate tracking, partners, and commission structures.", price: "$229" },
-    { title: "PPC Starter Campaign", category: "PPC", description: "Paid search campaign setup with keyword selection and tracking.", price: "$189" }
+    { title: "SEO Audit Package", category: "SEO", description: "Full website audit, keyword research, and optimization plan.", price: "$199", url: "product.html" },
+    { title: "Email Campaign Setup", category: "Email Marketing", description: "Design and launch targeted email campaigns with automation.", price: "$149", url: "product-email.html" },
+    { title: "Social Media Growth Plan", category: "Social Media Marketing", description: "Strategy for organic growth, engagement, and content planning.", price: "$179", url: "product-social.html" },
+    { title: "Mobile App Promotion", category: "Mobile Marketing", description: "Drive installs and engagement through mobile-first advertising.", price: "$169", url: "MobileMarketing.html" },
+    { title: "Affiliate Program Launch", category: "Affiliate Marketing", description: "Set up affiliate tracking, partners, and commission structures.", price: "$229", url: "product-affiliate.html" },
+    { title: "PPC Starter Campaign", category: "PPC", description: "Paid search campaign setup with keyword selection and tracking.", price: "$189", url: "product-ppc.html" }
 ];
 
 const catalogGrid = document.getElementById("catalog-grid");
@@ -28,10 +28,13 @@ function renderCatalog(items) {
         }
         card.innerHTML = `
             <span class="product-category">${product.category}</span>
-            <h3>${product.title}</h3>
+            <h3><a href="${product.url}" class="product-detail-link">${product.title}</a></h3>
             <p>${product.description}</p>
             <div class="product-meta">${product.price}</div>
-            <button type="button" class="add-to-cart-btn" data-title="${product.title}">Add to Cart</button>
+            <div class="product-card-actions">
+                <a href="${product.url}" class="view-details-btn">View Details</a>
+                <button type="button" class="add-to-cart-btn" data-title="${product.title}">Add to Cart</button>
+            </div>
         `;
         catalogGrid.appendChild(card);
     });
